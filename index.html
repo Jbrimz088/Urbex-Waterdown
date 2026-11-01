@@ -17,7 +17,7 @@
                             bg: '#0f1115',
                             card: '#181b21',
                             border: '#2a2f3a',
-                            accent: '#f97316', // Neon Orange accent
+                            accent: '#9d4edd', // Purple accent
                             muted: '#9ca3af'
                         }
                     },
@@ -43,22 +43,22 @@
             color: #e5e7eb;
         }
         .card-glow:hover {
-            box-shadow: 0 0 20px -5px rgba(249, 115, 22, 0.25);
+            box-shadow: 0 0 20px -5px rgba(157, 78, 221, 0.25);
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-orange-500 selection:text-white">
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-purple-500 selection:text-white">
 
     <!-- NAVIGATION HEADER -->
     <header class="sticky top-0 z-50 bg-[#0f1115]/90 backdrop-blur-md border-b border-urbex-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <!-- Logo / Brand -->
             <a href="index.html" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-lg bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-black transition-all">
+                <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-500 group-hover:bg-purple-500 group-hover:text-white transition-all">
                     <i class="fa-solid me-0.5 fa-compass text-lg"></i>
                 </div>
                 <div>
-                    <span class="font-bold text-lg tracking-wider uppercase text-white block leading-none">Waterdown <span class="text-orange-500">Urbex</span></span>
+                    <span class="font-bold text-lg tracking-wider uppercase text-white block leading-none">Waterdown <span class="text-purple-500">Urbex</span></span>
                     <span class="text-xs font-mono text-urbex-muted">Hamilton Directory</span>
                 </div>
             </a>
@@ -68,20 +68,20 @@
                 <span class="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-urbex-card border border-urbex-border text-urbex-muted">
                     <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Active Database
                 </span>
-                <a href="#about" class="text-sm font-medium text-gray-400 hover:text-orange-500 transition-colors">About</a>
+                <a href="#about" class="text-sm font-medium text-gray-400 hover:text-purple-400 transition-colors">About</a>
             </div>
         </div>
     </header>
 
     <!-- HERO SECTION -->
-    <section class="relative py-12 md:py-16 border-b border-urbex-border bg-gradient-to-b from-orange-500/5 to-transparent">
+    <section class="relative py-12 md:py-16 border-b border-urbex-border bg-gradient-to-b from-purple-500/5 to-transparent">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-mono mb-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono mb-4">
                     <i class="fa-solid fa-triangle-exclamation"></i> Leave No Trace • Take Only Pictures
                 </div>
                 <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
-                    Abandoned & Hidden Places in <span class="text-orange-500">Waterdown</span>
+                    Abandoned & Hidden Places in <span class="text-purple-500">Waterdown</span>
                 </h1>
                 <p class="text-gray-400 text-base sm:text-lg leading-relaxed mb-6">
                     A curated archive of abandoned sites, industrial ruins, hidden tunnels, and forgotten structures across Waterdown and the greater Hamilton Escarpment region.
@@ -92,10 +92,10 @@
                     <div class="relative flex-1">
                         <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500 text-sm"></i>
                         <input type="text" id="searchInput" placeholder="Search locations, categories..." 
-                            class="w-full pl-10 pr-4 py-2.5 rounded-lg bg-urbex-card border border-urbex-border text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 text-sm transition-all">
+                            class="w-full pl-10 pr-4 py-2.5 rounded-lg bg-urbex-card border border-urbex-border text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 text-sm transition-all">
                     </div>
                     <div class="flex gap-2">
-                        <select id="filterCategory" class="px-3 py-2.5 rounded-lg bg-urbex-card border border-urbex-border text-gray-300 text-sm focus:outline-none focus:border-orange-500 cursor-pointer">
+                        <select id="filterCategory" class="px-3 py-2.5 rounded-lg bg-urbex-card border border-urbex-border text-gray-300 text-sm focus:outline-none focus:border-purple-500 cursor-pointer">
                             <option value="all">All Types</option>
                             <option value="industrial">Industrial Mill Ruins</option>
                             <option value="tunnel">Tunnels & Culverts</option>
@@ -112,7 +112,7 @@
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1">
         <div class="flex items-center justify-between mb-6">
             <h2 class="text-xl font-bold text-white flex items-center gap-2">
-                <i class="fa-solid fa-map-pin text-orange-500 text-base"></i> Explored Locations
+                <i class="fa-solid fa-map-pin text-purple-500 text-base"></i> Explored Locations
             </h2>
             <span class="text-xs font-mono text-gray-500" id="cardCount">Showing 3 places</span>
         </div>
@@ -127,13 +127,13 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="locationGrid">
 
             <!-- PLACE CARD 1 -->
-            <a href="place-1.html" class="location-card group bg-urbex-card border border-urbex-border rounded-xl overflow-hidden hover:border-orange-500/50 transition-all duration-300 card-glow flex flex-col" data-category="industrial" data-title="smokey hollow mill ruins waterdown">
+            <a href="place-1.html" class="location-card group bg-urbex-card border border-urbex-border rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 card-glow flex flex-col" data-category="industrial" data-title="smokey hollow mill ruins waterdown">
                 <div class="relative h-48 bg-gray-900 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" 
                          alt="Smokey Hollow Mill Ruins" 
                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
-                         onerror="this.src='https://placehold.co/800x450/181b21/f97316?text=Smokey+Hollow+Ruins'">
-                    <div class="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md text-xs font-mono text-orange-400 border border-orange-500/20">
+                         onerror="this.src='https://placehold.co/800x450/181b21/9d4edd?text=Smokey+Hollow+Ruins'">
+                    <div class="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md text-xs font-mono text-purple-400 border border-purple-500/20">
                         Industrial Ruins
                     </div>
                     <div class="absolute bottom-3 right-3 bg-black/80 px-2 py-0.5 rounded text-[10px] font-mono text-gray-300">
@@ -142,29 +142,29 @@
                 </div>
                 <div class="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                        <h3 class="text-lg font-bold text-white group-hover:text-orange-500 transition-colors mb-1 flex items-center justify-between">
+                        <h3 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors mb-1 flex items-center justify-between">
                             Smokey Hollow Mill Site
-                            <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-0 group-hover:opacity-100 transition-opacity text-orange-500"></i>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-0 group-hover:opacity-100 transition-opacity text-purple-400"></i>
                         </h3>
-                        <p class="text-xs text-orange-500/80 font-mono mb-3"><i class="fa-solid fa-location-dot"></i> Grindstone Creek, Waterdown</p>
+                        <p class="text-xs text-purple-400/80 font-mono mb-3"><i class="fa-solid fa-location-dot"></i> Grindstone Creek, Waterdown</p>
                         <p class="text-gray-400 text-sm line-clamp-2">
                             Remnants of the 19th-century flour and saw mill complex situated along the Grindstone Creek ravine floor.
                         </p>
                     </div>
                     <div class="mt-4 pt-3 border-t border-urbex-border/60 flex items-center justify-between text-xs text-gray-500 font-mono">
                         <span><i class="fa-regular fa-calendar"></i> Added 2024</span>
-                        <span class="text-orange-500 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-semibold">View File &rarr;</span>
+                        <span class="text-purple-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-semibold">View File &rarr;</span>
                     </div>
                 </div>
             </a>
 
             <!-- PLACE CARD 2 -->
-            <a href="place-2.html" class="location-card group bg-urbex-card border border-urbex-border rounded-xl overflow-hidden hover:border-orange-500/50 transition-all duration-300 card-glow flex flex-col" data-category="tunnel" data-title="clappison escarpment tunnel waterdown">
+            <a href="place-2.html" class="location-card group bg-urbex-card border border-urbex-border rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 card-glow flex flex-col" data-category="tunnel" data-title="clappison escarpment tunnel waterdown">
                 <div class="relative h-48 bg-gray-900 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80" 
                          alt="Clappison Escarpment Drain Tunnel" 
                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
-                         onerror="this.src='https://placehold.co/800x450/181b21/f97316?text=Escarpment+Tunnel'">
+                         onerror="this.src='https://placehold.co/800x450/181b21/9d4edd?text=Escarpment+Tunnel'">
                     <div class="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md text-xs font-mono text-cyan-400 border border-cyan-500/20">
                         Drain Tunnel
                     </div>
@@ -174,29 +174,29 @@
                 </div>
                 <div class="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                        <h3 class="text-lg font-bold text-white group-hover:text-orange-500 transition-colors mb-1 flex items-center justify-between">
+                        <h3 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors mb-1 flex items-center justify-between">
                             Clappison Drain Culvert
-                            <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-0 group-hover:opacity-100 transition-opacity text-orange-500"></i>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-0 group-hover:opacity-100 transition-opacity text-purple-400"></i>
                         </h3>
-                        <p class="text-xs text-orange-500/80 font-mono mb-3"><i class="fa-solid fa-location-dot"></i> Clappison's Corners Cut</p>
+                        <p class="text-xs text-purple-400/80 font-mono mb-3"><i class="fa-solid fa-location-dot"></i> Clappison's Corners Cut</p>
                         <p class="text-gray-400 text-sm line-clamp-2">
                             Long stone and concrete drainage culvert running deep beneath Highway 6/5 intersection cut into the Niagara Escarpment.
                         </p>
                     </div>
                     <div class="mt-4 pt-3 border-t border-urbex-border/60 flex items-center justify-between text-xs text-gray-500 font-mono">
                         <span><i class="fa-regular fa-calendar"></i> Added 2024</span>
-                        <span class="text-orange-500 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-semibold">View File &rarr;</span>
+                        <span class="text-purple-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-semibold">View File &rarr;</span>
                     </div>
                 </div>
             </a>
 
             <!-- PLACE CARD 3 -->
-            <a href="place-3.html" class="location-card group bg-urbex-card border border-urbex-border rounded-xl overflow-hidden hover:border-orange-500/50 transition-all duration-300 card-glow flex flex-col" data-category="residential" data-title="abandoned escarpment farmhouse waterdown">
+            <a href="place-3.html" class="location-card group bg-urbex-card border border-urbex-border rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 card-glow flex flex-col" data-category="residential" data-title="abandoned escarpment farmhouse waterdown">
                 <div class="relative h-48 bg-gray-900 overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" 
                          alt="Abandoned Escarpment Farmhouse" 
                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
-                         onerror="this.src='https://placehold.co/800x450/181b21/f97316?text=Escarpment+Farmhouse'">
+                         onerror="this.src='https://placehold.co/800x450/181b21/9d4edd?text=Escarpment+Farmhouse'">
                     <div class="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md text-xs font-mono text-purple-400 border border-purple-500/20">
                         Residential
                     </div>
@@ -206,18 +206,18 @@
                 </div>
                 <div class="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                        <h3 class="text-lg font-bold text-white group-hover:text-orange-500 transition-colors mb-1 flex items-center justify-between">
+                        <h3 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors mb-1 flex items-center justify-between">
                             Old Millburough Farmstead
-                            <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-0 group-hover:opacity-100 transition-opacity text-orange-500"></i>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-0 group-hover:opacity-100 transition-opacity text-purple-400"></i>
                         </h3>
-                        <p class="text-xs text-orange-500/80 font-mono mb-3"><i class="fa-solid fa-location-dot"></i> North Waterdown / Flamborough</p>
+                        <p class="text-xs text-purple-400/80 font-mono mb-3"><i class="fa-solid fa-location-dot"></i> North Waterdown / Flamborough</p>
                         <p class="text-gray-400 text-sm line-clamp-2">
                             Late 1800s stone farmhouse and collapsed wooden silo abandoned during suburban expansion developments.
                         </p>
                     </div>
                     <div class="mt-4 pt-3 border-t border-urbex-border/60 flex items-center justify-between text-xs text-gray-500 font-mono">
                         <span><i class="fa-regular fa-calendar"></i> Added 2024</span>
-                        <span class="text-orange-500 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-semibold">View File &rarr;</span>
+                        <span class="text-purple-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-semibold">View File &rarr;</span>
                     </div>
                 </div>
             </a>
@@ -229,24 +229,24 @@
                 Make sure to create the corresponding place-X.html file in GitHub!
                 ===================================================================
                 
-                <a href="place-4.html" class="location-card group bg-urbex-card border border-urbex-border rounded-xl overflow-hidden hover:border-orange-500/50 transition-all duration-300 card-glow flex flex-col" data-category="industrial" data-title="your place search title">
+                <a href="place-4.html" class="location-card group bg-urbex-card border border-urbex-border rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 card-glow flex flex-col" data-category="industrial" data-title="your place search title">
                     <div class="relative h-48 bg-gray-900 overflow-hidden">
-                        <img src="YOUR_IMAGE_URL_HERE.jpg" alt="Place Title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100" onerror="this.src='https://placehold.co/800x450/181b21/f97316?text=Place+Image'">
-                        <div class="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md text-xs font-mono text-orange-400 border border-orange-500/20">
+                        <img src="YOUR_IMAGE_URL_HERE.jpg" alt="Place Title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100" onerror="this.src='https://placehold.co/800x450/181b21/9d4edd?text=Place+Image'">
+                        <div class="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md text-xs font-mono text-purple-400 border border-purple-500/20">
                             Category Tag
                         </div>
                     </div>
                     <div class="p-5 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg font-bold text-white group-hover:text-orange-500 transition-colors mb-1">
+                            <h3 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors mb-1">
                                 Place Title Here
                             </h3>
-                            <p class="text-xs text-orange-500/80 font-mono mb-3"><i class="fa-solid fa-location-dot"></i> Specific Area, Waterdown</p>
+                            <p class="text-xs text-purple-400/80 font-mono mb-3"><i class="fa-solid fa-location-dot"></i> Specific Area, Waterdown</p>
                             <p class="text-gray-400 text-sm line-clamp-2">Short summary description of the spot.</p>
                         </div>
                         <div class="mt-4 pt-3 border-t border-urbex-border/60 flex items-center justify-between text-xs text-gray-500 font-mono">
                             <span><i class="fa-regular fa-calendar"></i> Added 2024</span>
-                            <span class="text-orange-500 group-hover:translate-x-1 transition-transform">View File &rarr;</span>
+                            <span class="text-purple-400 group-hover:translate-x-1 transition-transform">View File &rarr;</span>
                         </div>
                     </div>
                 </a>
@@ -267,15 +267,15 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-urbex-bg border border-urbex-border rounded-xl p-6 md:p-8">
                 <div class="flex items-center gap-3 mb-4">
-                    <div class="p-2 rounded bg-orange-500/10 text-orange-500 border border-orange-500/20">
+                    <div class="p-2 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">
                         <i class="fa-solid fa-code-commit"></i>
                     </div>
                     <h3 class="text-lg font-bold text-white">How to Add New Places Manually</h3>
                 </div>
                 <div class="space-y-3 text-sm text-gray-400 font-mono leading-relaxed">
-                    <p><span class="text-orange-500">Step 1:</span> Copy any existing <code>&lt;a href="place-X.html" class="location-card"...&gt;</code> block in this <code>index.html</code> code.</p>
-                    <p><span class="text-orange-500">Step 2:</span> Change the <code>href</code> link target (e.g. <code>href="my-new-spot.html"</code>) and edit title/description/tags.</p>
-                    <p><span class="text-orange-500">Step 3:</span> Create a matching HTML file in your GitHub repository (e.g. <code>place-1.html</code>, <code>my-new-spot.html</code>) with details for that specific spot!</p>
+                    <p><span class="text-purple-400">Step 1:</span> Copy any existing <code>&lt;a href="place-X.html" class="location-card"...&gt;</code> block in this <code>index.html</code> code.</p>
+                    <p><span class="text-purple-400">Step 2:</span> Change the <code>href</code> link target (e.g. <code>href="my-new-spot.html"</code>) and edit title/description/tags.</p>
+                    <p><span class="text-purple-400">Step 3:</span> Create a matching HTML file in your GitHub repository (e.g. <code>place-1.html</code>, <code>my-new-spot.html</code>) with details for that specific spot!</p>
                 </div>
             </div>
         </div>
