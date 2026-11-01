@@ -1,253 +1,341 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Waterdown Urbex Directory</title>
-  <style>
-    :root {
-      --bg-dark: #0a0a0c;
-      --card-bg: #141419;
-      --accent-purple: #9d4edd;
-      --accent-purple-glow: rgba(157, 78, 221, 0.4);
-      --text-main: #e0e0e6;
-      --text-muted: #9a9ab0;
-      --border-color: #262633;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      line-height: 1.6;
-      padding: 20px;
-    }
-
-    header {
-      max-width: 1000px;
-      margin: 0 auto 30px auto;
-      text-align: center;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #fff;
-      text-shadow: 0 0 10px var(--accent-purple-glow);
-    }
-
-    p.subtitle {
-      color: var(--text-muted);
-      font-size: 1rem;
-      margin-top: 5px;
-    }
-
-    .search-container {
-      max-width: 1000px;
-      margin: 0 auto 30px auto;
-    }
-
-    .search-bar {
-      width: 100%;
-      padding: 14px 20px;
-      background-color: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      color: var(--text-main);
-      font-size: 1rem;
-      outline: none;
-      transition: border-color 0.3s, box-shadow 0.3s;
-    }
-
-    .search-bar:focus {
-      border-color: var(--accent-purple);
-      box-shadow: 0 0 12px var(--accent-purple-glow);
-    }
-
-    .urbex-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 25px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .urbex-card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-    }
-
-    .urbex-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--accent-purple);
-      box-shadow: 0 8px 20px var(--accent-purple-glow);
-    }
-
-    .card-img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      background-color: #1c1c24;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-
-    .card-content {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .card-title {
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 8px;
-    }
-
-    .card-meta {
-      font-size: 0.85rem;
-      color: var(--accent-purple);
-      text-transform: uppercase;
-      font-weight: bold;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-    }
-
-    .card-desc {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      flex-grow: 1;
-    }
-
-    .card-footer {
-      margin-top: 15px;
-      padding-top: 10px;
-      border-top: 1px solid var(--border-color);
-      font-size: 0.85rem;
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    footer {
-      max-width: 1000px;
-      margin: 50px auto 20px auto;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      border-top: 1px solid var(--border-color);
-      padding-top: 20px;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Waterdown Urbex</h1>
-    <p class="subtitle">Abandoned & Hidden Locations Directory</p>
-  </header>
-
-  <div class="search-container">
-    <input type="text" id="searchInput" class="search-bar" placeholder="Search locations, categories, or keywords..." onkeyup="filterLocations()">
-  </div>
-
-  <main class="urbex-grid" id="urbexGrid">
-
-    <!-- EXAMPLE LOCATION CARD 1 -->
-    <!-- Copy & paste this block to manually add a new place -->
-    <a href="smokey-hollow-mill.html" class="urbex-card">
-      <div class="card-img">
-        <!-- Replace src with your image path (e.g. img/mill.jpg) or keep as placeholder -->
-        <img src="https://via.placeholder.com/400x200/1c1c24/9d4edd?text=Smokey+Hollow" alt="Smokey Hollow Mill" style="width:100%; height:100%; object-fit:cover;">
-      </div>
-      <div class="card-content">
-        <div class="card-meta"></div>
-        <h2 class="card-title">Old forest house</h2>
-        <p class="card-desc">Historical stone masonry foundations hidden along the creek trail line.</p>
-        <div class="card-footer">
-          <span>Waterdown Ravine</span>
-          <span style="color: var(--accent-purple);">View Location &rarr;</span>
-        </div>
-      </div>
-    </a>
-
-    <!-- EXAMPLE LOCATION CARD 2 -->
-    <a href="clappison-tunnel.html" class="urbex-card">
-      <div class="card-img">
-        <img src="https://via.placeholder.com/400x200/1c1c24/9d4edd?text=Rail+Drain" alt="Rail Drain Tunnel" style="width:100%; height:100%; object-fit:cover;">
-      </div>
-      <div class="card-content">
-        <div class="card-meta">Infrastructure</div>
-        <h2 class="card-title">Old Railway Culvert</h2>
-        <p class="card-desc">Concrete overflow drainage tunnel running underneath the old track bed.</p>
-        <div class="card-footer">
-          <span>Clappison Cut</span>
-          <span style="color: var(--accent-purple);">View Location &rarr;</span>
-        </div>
-      </div>
-    </a>
-
-    <!-- EXAMPLE LOCATION CARD 3 -->
-    <a href="quarry-overlook.html" class="urbex-card">
-      <div class="card-img">
-        <img src="https://via.placeholder.com/400x200/1c1c24/9d4edd?text=Quarry" alt="Quarry Edge" style="width:100%; height:100%; object-fit:cover;">
-      </div>
-      <div class="card-content">
-        <div class="card-meta">Overlook / Abandoned Site</div>
-        <h2 class="card-title">High Quarry Ledge</h2>
-        <p class="card-desc">Elevated vantage point overlooking inactive excavation zones and old equipment.</p>
-        <div class="card-footer">
-          <span>East Waterdown</span>
-          <span style="color: var(--accent-purple);">View Location &rarr;</span>
-        </div>
-      </div>
-    </a>
-
-    <!-- ADD NEW LOCATIONS ABOVE THIS LINE -->
-
-  </main>
-
-  <footer>
-    <p>Maintained by jbrimz | Waterdown Urbex Directory</p>
-  </footer>
-
-  <script>
-    function filterLocations() {
-      const input = document.getElementById('searchInput').value.toLowerCase();
-      const cards = document.querySelectorAll('.urbex-card');
-
-      cards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        if (text.includes(input)) {
-          card.style.display = "flex";
-        } else {
-          card.style.display = "none";
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waterdown Urbex Archive | Hamilton, ON</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        urbex: {
+                            bg: '#0f1115',
+                            card: '#181b21',
+                            border: '#2a2f3a',
+                            accent: '#f97316', // Neon Orange accent
+                            muted: '#9ca3af'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
         }
-      });
-    }
-  </script>
+    </script>
+    
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f1115;
+            color: #e5e7eb;
+        }
+        .card-glow:hover {
+            box-shadow: 0 0 20px -5px rgba(249, 115, 22, 0.25);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-orange-500 selection:text-white">
+
+    <!-- NAVIGATION HEADER -->
+    <header class="sticky top-0 z-50 bg-[#0f1115]/90 backdrop-blur-md border-b border-urbex-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Logo / Brand -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-lg bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-black transition-all">
+                    <i class="fa-solid me-0.5 fa-compass text-lg"></i>
+                </div>
+                <div>
+                    <span class="font-bold text-lg tracking-wider uppercase text-white block leading-none">Waterdown <span class="text-orange-500">Urbex</span></span>
+                    <span class="text-xs font-mono text-urbex-muted">Hamilton Directory</span>
+                </div>
+            </a>
+
+            <!-- Header Quick Stats / Links -->
+            <div class="flex items-center gap-4">
+                <span class="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-urbex-card border border-urbex-border text-urbex-muted">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Active Database
+                </span>
+                <a href="#about" class="text-sm font-medium text-gray-400 hover:text-orange-500 transition-colors">About</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative py-12 md:py-16 border-b border-urbex-border bg-gradient-to-b from-orange-500/5 to-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-mono mb-4">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Leave No Trace • Take Only Pictures
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
+                    Abandoned & Hidden History in <span class="text-orange-500">Waterdown</span>
+                </h1>
+                <p class="text-gray-400 text-base sm:text-lg leading-relaxed mb-6">
+                    A curated archive of abandoned sites, industrial ruins, hidden tunnels, and forgotten structures across Waterdown and the greater Hamilton Escarpment region.
+                </p>
+
+                <!-- Search and Filter Controls -->
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <div class="relative flex-1">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500 text-sm"></i>
+                        <input type="text" id="searchInput" placeholder="Search locations, categories..." 
+                            class="w-full pl-10 pr-4 py-2.5 rounded-lg bg-urbex-card border border-urbex-border text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 text-sm transition-all">
+                    </div>
+                    <div class="flex gap-2">
+                        <select id="filterCategory" class="px-3 py-2.5 rounded-lg bg-urbex-card border border-urbex-border text-gray-300 text-sm focus:outline-none focus:border-orange-500 cursor-pointer">
+                            <option value="all">All Types</option>
+                            <option value="industrial">Industrial Mill Ruins</option>
+                            <option value="tunnel">Tunnels & Culverts</option>
+                            <option value="residential">Abandoned Homes</option>
+                            <option value="infrastructure">Infrastructure</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN LOCATION GRID -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1">
+        <div class="flex items-center justify-between mb-6">
+            <h2 class="text-xl font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-map-pin text-orange-500 text-base"></i> Explored Locations
+            </h2>
+            <span class="text-xs font-mono text-gray-500" id="cardCount">Showing 3 places</span>
+        </div>
+
+        <!-- 
+            ===================================================================
+            LOCATIONS GRID 
+            To add a new place: Copy one of the <a> tags below, update the href 
+            to your new file (e.g., place-4.html), image src, title, and tags.
+            ===================================================================
+        -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="locationGrid">
+
+            <!-- PLACE CARD 1 -->
+            <a href="place-1.html" class="location-card group bg-urbex-card border border-urbex-border rounded-xl overflow-hidden hover:border-orange-500/50 transition-all duration-300 card-glow flex flex-col" data-category="industrial" data-title="smokey hollow mill ruins waterdown">
+                <div class="relative h-48 bg-gray-900 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" 
+                         alt="Smokey Hollow Mill Ruins" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
+                         onerror="this.src='https://placehold.co/800x450/181b21/f97316?text=Smokey+Hollow+Ruins'">
+                    <div class="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md text-xs font-mono text-orange-400 border border-orange-500/20">
+                        Industrial Ruins
+                    </div>
+                    <div class="absolute bottom-3 right-3 bg-black/80 px-2 py-0.5 rounded text-[10px] font-mono text-gray-300">
+                        High Demolition Risk
+                    </div>
+                </div>
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-white group-hover:text-orange-500 transition-colors mb-1 flex items-center justify-between">
+                            Smokey Hollow Mill Site
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-0 group-hover:opacity-100 transition-opacity text-orange-500"></i>
+                        </h3>
+                        <p class="text-xs text-orange-500/80 font-mono mb-3"><i class="fa-solid fa-location-dot"></i> Grindstone Creek, Waterdown</p>
+                        <p class="text-gray-400 text-sm line-clamp-2">
+                            Remnants of the 19th-century flour and saw mill complex situated along the Grindstone Creek ravine floor.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-urbex-border/60 flex items-center justify-between text-xs text-gray-500 font-mono">
+                        <span><i class="fa-regular fa-calendar"></i> Added 2024</span>
+                        <span class="text-orange-500 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-semibold">View File &rarr;</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- PLACE CARD 2 -->
+            <a href="place-2.html" class="location-card group bg-urbex-card border border-urbex-border rounded-xl overflow-hidden hover:border-orange-500/50 transition-all duration-300 card-glow flex flex-col" data-category="tunnel" data-title="clappison escarpment tunnel waterdown">
+                <div class="relative h-48 bg-gray-900 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80" 
+                         alt="Clappison Escarpment Drain Tunnel" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
+                         onerror="this.src='https://placehold.co/800x450/181b21/f97316?text=Escarpment+Tunnel'">
+                    <div class="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md text-xs font-mono text-cyan-400 border border-cyan-500/20">
+                        Drain Tunnel
+                    </div>
+                    <div class="absolute bottom-3 right-3 bg-black/80 px-2 py-0.5 rounded text-[10px] font-mono text-gray-300">
+                        Flash Flood Hazard
+                    </div>
+                </div>
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-white group-hover:text-orange-500 transition-colors mb-1 flex items-center justify-between">
+                            Clappison Drain Culvert
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-0 group-hover:opacity-100 transition-opacity text-orange-500"></i>
+                        </h3>
+                        <p class="text-xs text-orange-500/80 font-mono mb-3"><i class="fa-solid fa-location-dot"></i> Clappison's Corners Cut</p>
+                        <p class="text-gray-400 text-sm line-clamp-2">
+                            Long stone and concrete drainage culvert running deep beneath Highway 6/5 intersection cut into the Niagara Escarpment.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-urbex-border/60 flex items-center justify-between text-xs text-gray-500 font-mono">
+                        <span><i class="fa-regular fa-calendar"></i> Added 2024</span>
+                        <span class="text-orange-500 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-semibold">View File &rarr;</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- PLACE CARD 3 -->
+            <a href="place-3.html" class="location-card group bg-urbex-card border border-urbex-border rounded-xl overflow-hidden hover:border-orange-500/50 transition-all duration-300 card-glow flex flex-col" data-category="residential" data-title="abandoned escarpment farmhouse waterdown">
+                <div class="relative h-48 bg-gray-900 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" 
+                         alt="Abandoned Escarpment Farmhouse" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
+                         onerror="this.src='https://placehold.co/800x450/181b21/f97316?text=Escarpment+Farmhouse'">
+                    <div class="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md text-xs font-mono text-purple-400 border border-purple-500/20">
+                        Residential
+                    </div>
+                    <div class="absolute bottom-3 right-3 bg-black/80 px-2 py-0.5 rounded text-[10px] font-mono text-amber-400">
+                        Sealed / Boarded
+                    </div>
+                </div>
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-white group-hover:text-orange-500 transition-colors mb-1 flex items-center justify-between">
+                            Old Millburough Farmstead
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-0 group-hover:opacity-100 transition-opacity text-orange-500"></i>
+                        </h3>
+                        <p class="text-xs text-orange-500/80 font-mono mb-3"><i class="fa-solid fa-location-dot"></i> North Waterdown / Flamborough</p>
+                        <p class="text-gray-400 text-sm line-clamp-2">
+                            Late 1800s stone farmhouse and collapsed wooden silo abandoned during suburban expansion developments.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-urbex-border/60 flex items-center justify-between text-xs text-gray-500 font-mono">
+                        <span><i class="fa-regular fa-calendar"></i> Added 2024</span>
+                        <span class="text-orange-500 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-semibold">View File &rarr;</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 
+                ===================================================================
+                TEMPLATE FOR ADDING A NEW LOCATION:
+                Uncomment and edit the HTML snippet below when adding a new place.
+                Make sure to create the corresponding place-X.html file in GitHub!
+                ===================================================================
+                
+                <a href="place-4.html" class="location-card group bg-urbex-card border border-urbex-border rounded-xl overflow-hidden hover:border-orange-500/50 transition-all duration-300 card-glow flex flex-col" data-category="industrial" data-title="your place search title">
+                    <div class="relative h-48 bg-gray-900 overflow-hidden">
+                        <img src="YOUR_IMAGE_URL_HERE.jpg" alt="Place Title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100" onerror="this.src='https://placehold.co/800x450/181b21/f97316?text=Place+Image'">
+                        <div class="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md text-xs font-mono text-orange-400 border border-orange-500/20">
+                            Category Tag
+                        </div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-orange-500 transition-colors mb-1">
+                                Place Title Here
+                            </h3>
+                            <p class="text-xs text-orange-500/80 font-mono mb-3"><i class="fa-solid fa-location-dot"></i> Specific Area, Waterdown</p>
+                            <p class="text-gray-400 text-sm line-clamp-2">Short summary description of the spot.</p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-urbex-border/60 flex items-center justify-between text-xs text-gray-500 font-mono">
+                            <span><i class="fa-regular fa-calendar"></i> Added 2024</span>
+                            <span class="text-orange-500 group-hover:translate-x-1 transition-transform">View File &rarr;</span>
+                        </div>
+                    </div>
+                </a>
+            -->
+
+        </div>
+
+        <!-- No Results Fallback -->
+        <div id="noResults" class="hidden text-center py-12 border border-dashed border-urbex-border rounded-xl bg-urbex-card/50 my-6">
+            <i class="fa-solid fa-compass-slash text-4xl text-gray-600 mb-3"></i>
+            <h3 class="text-lg font-bold text-gray-300">No matching locations found</h3>
+            <p class="text-sm text-gray-500 mt-1">Try tweaking your search term or filter settings.</p>
+        </div>
+    </main>
+
+    <!-- INSTRUCTIONS BOX FOR EDITING -->
+    <section id="about" class="bg-urbex-card/50 border-t border-urbex-border py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-urbex-bg border border-urbex-border rounded-xl p-6 md:p-8">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-2 rounded bg-orange-500/10 text-orange-500 border border-orange-500/20">
+                        <i class="fa-solid fa-code-commit"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">How to Add New Places Manually</h3>
+                </div>
+                <div class="space-y-3 text-sm text-gray-400 font-mono leading-relaxed">
+                    <p><span class="text-orange-500">Step 1:</span> Copy any existing <code>&lt;a href="place-X.html" class="location-card"...&gt;</code> block in this <code>index.html</code> code.</p>
+                    <p><span class="text-orange-500">Step 2:</span> Change the <code>href</code> link target (e.g. <code>href="my-new-spot.html"</code>) and edit title/description/tags.</p>
+                    <p><span class="text-orange-500">Step 3:</span> Create a matching HTML file in your GitHub repository (e.g. <code>place-1.html</code>, <code>my-new-spot.html</code>) with details for that specific spot!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-urbex-border bg-[#0b0c0f] py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-gray-500">
+            <div>
+                &copy; Waterdown Urbex Archive • Hamilton, Ontario
+            </div>
+            <div class="flex items-center gap-4">
+                <span>Respect Property • Explore Safely</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SEARCH / FILTERING SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('searchInput');
+            const filterCategory = document.getElementById('filterCategory');
+            const cards = document.querySelectorAll('.location-card');
+            const noResults = document.getElementById('noResults');
+            const cardCount = document.getElementById('cardCount');
+
+            function filterCards() {
+                const query = searchInput.value.toLowerCase().trim();
+                const category = filterCategory.value;
+                let visibleCount = 0;
+
+                cards.forEach(card => {
+                    const cardTitle = card.getAttribute('data-title') || '';
+                    const cardCategory = card.getAttribute('data-category') || '';
+
+                    const matchesSearch = cardTitle.includes(query);
+                    const matchesCategory = (category === 'all') || (cardCategory === category);
+
+                    if (matchesSearch && matchesCategory) {
+                        card.classList.remove('hidden');
+                        visibleCount++;
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+
+                // Update visibility of "No Results" message
+                if (visibleCount === 0) {
+                    noResults.classList.remove('hidden');
+                } else {
+                    noResults.classList.add('hidden');
+                }
+
+                // Update counter text
+                cardCount.textContent = `Showing ${visibleCount} place${visibleCount === 1 ? '' : 's'}`;
+            }
+
+            searchInput.addEventListener('input', filterCards);
+            filterCategory.addEventListener('change', filterCards);
+        });
+    </script>
 </body>
 </html>
