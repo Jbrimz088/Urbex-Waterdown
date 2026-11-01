@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smokey Hollow Mill Site | Waterdown Urbex</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        urbex: {
+                            bg: '#0f1115',
+                            card: '#181b21',
+                            border: '#2a2f3a',
+                            accent: '#9d4edd',
+                            muted: '#9ca3af'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f1115;
+            color: #e5e7eb;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-purple-500 selection:text-white">
+
+    <!-- NAVIGATION HEADER -->
+    <header class="sticky top-0 z-50 bg-[#0f1115]/90 backdrop-blur-md border-b border-urbex-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-500 group-hover:bg-purple-500 group-hover:text-white transition-all">
+                    <i class="fa-solid me-0.5 fa-compass text-lg"></i>
+                </div>
+                <div>
+                    <span class="font-bold text-lg tracking-wider uppercase text-white block leading-none">Waterdown <span class="text-purple-500">Urbex</span></span>
+                    <span class="text-xs font-mono text-urbex-muted">Hamilton Directory</span>
+                </div>
+            </a>
+
+            <a href="index.html" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-mono bg-urbex-card border border-urbex-border text-gray-300 hover:text-white hover:border-purple-500/50 transition-all">
+                <i class="fa-solid fa-arrow-left"></i> Back to Locations
+            </a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1 w-full">
+        
+        <!-- HEADER / TITLE SECTION -->
+        <div class="mb-8">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono mb-3">
+                Industrial Ruins
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-white mb-2">Smokey Hollow Mill Site</h1>
+            <p class="text-sm font-mono text-purple-400/80 flex items-center gap-2">
+                <i class="fa-solid fa-location-dot"></i> Grindstone Creek Ravine, Waterdown, ON
+            </p>
+        </div>
+
+        <!-- IMAGE GALLERY (5 IMAGES) -->
+        <section class="mb-10">
+            <h2 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-images text-purple-500"></i> Site Gallery
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                
+                <!-- Main Featured Photo -->
+                <div class="sm:col-span-2 lg:col-span-2 relative h-72 sm:h-80 bg-urbex-card border border-urbex-border rounded-xl overflow-hidden group">
+                    <img src="IMG_4105.jpeg" alt="Smokey Hollow Main View" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x450/181b21/9d4edd?text=Image+1'">
+                    <div class="absolute bottom-2 left-2 bg-black/70 backdrop-blur-md px-2 py-1 rounded text-[10px] font-mono text-gray-300">Image 1 / Main View</div>
+                </div>
+
+                <!-- Image 2 -->
+                <div class="relative h-72 sm:h-80 bg-urbex-card border border-urbex-border rounded-xl overflow-hidden group">
+                    <img src="image2.jpg" alt="Ruins Detail 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x450/181b21/9d4edd?text=Image+2'">
+                    <div class="absolute bottom-2 left-2 bg-black/70 backdrop-blur-md px-2 py-1 rounded text-[10px] font-mono text-gray-300">Image 2</div>
+                </div>
+
+                <!-- Image 3 -->
+                <div class="relative h-60 bg-urbex-card border border-urbex-border rounded-xl overflow-hidden group">
+                    <img src="image3.jpg" alt="Ruins Detail 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x450/181b21/9d4edd?text=Image+3'">
+                    <div class="absolute bottom-2 left-2 bg-black/70 backdrop-blur-md px-2 py-1 rounded text-[10px] font-mono text-gray-300">Image 3</div>
+                </div>
+
+                <!-- Image 4 -->
+                <div class="relative h-60 bg-urbex-card border border-urbex-border rounded-xl overflow-hidden group">
+                    <img src="image4.jpg" alt="Ruins Detail 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x450/181b21/9d4edd?text=Image+4'">
+                    <div class="absolute bottom-2 left-2 bg-black/70 backdrop-blur-md px-2 py-1 rounded text-[10px] font-mono text-gray-300">Image 4</div>
+                </div>
+
+                <!-- Image 5 -->
+                <div class="relative h-60 bg-urbex-card border border-urbex-border rounded-xl overflow-hidden group sm:col-span-2 lg:col-span-1">
+                    <img src="image5.jpg" alt="Ruins Detail 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x450/181b21/9d4edd?text=Image+5'">
+                    <div class="absolute bottom-2 left-2 bg-black/70 backdrop-blur-md px-2 py-1 rounded text-[10px] font-mono text-gray-300">Image 5</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- DETAILS GRID -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- LEFT / MAIN DESCRIPTION (2 cols) -->
+            <div class="lg:col-span-2 space-y-6">
+                
+                <div class="bg-urbex-card border border-urbex-border rounded-xl p-6">
+                    <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-file-lines text-purple-500"></i> Location Overview
+                    </h2>
+                    <p class="text-gray-300 leading-relaxed text-sm space-y-3">
+                        The Smokey Hollow Mill Site encompasses the crumbling stone foundation and timber frame remnants of a 19th-century industrial flour and saw mill. Situated deep within the Grindstone Creek ravine floor along the Bruce Trail network, this spot offers a glimpse into early Waterdown industry before power shifted away from waterwheels.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed text-sm mt-3">
+                        Over decades of natural weathering and erosion from the creek, several masonry walls have collapsed, creating an overgrown pocket of structural decay surrounded by heavy forest canopy.
+                    </p>
+                </div>
+
+                <!-- HAZARDS BOX -->
+                <div class="bg-amber-500/5 border border-amber-500/20 rounded-xl p-6">
+                    <h2 class="text-lg font-bold text-amber-400 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-triangle-exclamation"></i> Known Hazards
+                    </h2>
+                    <ul class="space-y-2 text-sm text-gray-300 list-disc list-inside font-mono">
+                        <li>Unstable masonry walls prone to loose falling stone.</li>
+                        <li>Slippery wet rock faces along the creek bed.</li>
+                        <li>Hidden sudden drop-offs and uneven foundation pits concealed by brush.</li>
+                        <li>High water levels and flash flow risk during heavy rain.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- RIGHT / QUICK SPECS SIDEBAR (1 col) -->
+            <div class="space-y-6">
+                
+                <div class="bg-urbex-card border border-urbex-border rounded-xl p-6 space-y-5">
+                    <h3 class="text-base font-bold text-white border-b border-urbex-border pb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-circle-info text-purple-500"></i> Quick Information
+                    </h3>
+
+                    <!-- Accessibility Rating -->
+                    <div>
+                        <span class="text-xs font-mono text-gray-400 block mb-1">Accessibility Rating</span>
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-1 rounded bg-purple-500/10 border border-purple-500/30 text-purple-400 font-mono text-xs font-bold">
+                                Moderate (3 / 5)
+                            </span>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">Requires a short hike down steep ravine stairs and unpaved dirt trails.</p>
+                    </div>
+
+                    <!-- Location Coordinates / Zone -->
+                    <div>
+                        <span class="text-xs font-mono text-gray-400 block mb-1">General Location</span>
+                        <p class="text-sm text-gray-200 font-mono"><i class="fa-solid fa-map text-purple-400 mr-1"></i> Grindstone Creek Ravine</p>
+                        <p class="text-xs text-gray-500 mt-0.5">Waterdown / Flamborough Area</p>
+                    </div>
+
+                    <!-- Risk Level -->
+                    <div>
+                        <span class="text-xs font-mono text-gray-400 block mb-1">Structural Condition</span>
+                        <span class="px-2.5 py-1 rounded bg-red-500/10 border border-red-500/30 text-red-400 font-mono text-xs font-bold inline-block">
+                            High Demolition / Collapse Risk
+                        </span>
+                    </div>
+
+                    <!-- Added Date -->
+                    <div>
+                        <span class="text-xs font-mono text-gray-400 block mb-1">Archive Entry</span>
+                        <p class="text-xs text-gray-300 font-mono"><i class="fa-regular fa-calendar mr-1"></i> Added 2024</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-urbex-border bg-[#0b0c0f] py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-gray-500">
+            <div>
+                &copy; Waterdown Urbex Archive • Hamilton, Ontario
+            </div>
+            <div class="flex items-center gap-4">
+                <span>Respect Property • Explore Safely</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
