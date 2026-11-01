@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waterdown Urbex Directory</title>
+  <style>
+    :root {
+      --bg-dark: #0a0a0c;
+      --card-bg: #141419;
+      --accent-purple: #9d4edd;
+      --accent-purple-glow: rgba(157, 78, 221, 0.4);
+      --text-main: #e0e0e6;
+      --text-muted: #9a9ab0;
+      --border-color: #262633;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    header {
+      max-width: 1000px;
+      margin: 0 auto 30px auto;
+      text-align: center;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: 0 0 10px var(--accent-purple-glow);
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-top: 5px;
+    }
+
+    .search-container {
+      max-width: 1000px;
+      margin: 0 auto 30px auto;
+    }
+
+    .search-bar {
+      width: 100%;
+      padding: 14px 20px;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      color: var(--text-main);
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .search-bar:focus {
+      border-color: var(--accent-purple);
+      box-shadow: 0 0 12px var(--accent-purple-glow);
+    }
+
+    .urbex-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .urbex-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .urbex-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-purple);
+      box-shadow: 0 8px 20px var(--accent-purple-glow);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background-color: #1c1c24;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .card-content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .card-meta {
+      font-size: 0.85rem;
+      color: var(--accent-purple);
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .card-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      flex-grow: 1;
+    }
+
+    .card-footer {
+      margin-top: 15px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.85rem;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer {
+      max-width: 1000px;
+      margin: 50px auto 20px auto;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border-color);
+      padding-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Waterdown Urbex</h1>
+    <p class="subtitle">Abandoned & Hidden Locations Directory</p>
+  </header>
+
+  <div class="search-container">
+    <input type="text" id="searchInput" class="search-bar" placeholder="Search locations, categories, or keywords..." onkeyup="filterLocations()">
+  </div>
+
+  <main class="urbex-grid" id="urbexGrid">
+
+    <!-- EXAMPLE LOCATION CARD 1 -->
+    <!-- Copy & paste this block to manually add a new place -->
+    <a href="smokey-hollow-mill.html" class="urbex-card">
+      <div class="card-img">
+        <!-- Replace src with your image path (e.g. img/mill.jpg) or keep as placeholder -->
+        <img src="https://via.placeholder.com/400x200/1c1c24/9d4edd?text=Smokey+Hollow" alt="Smokey Hollow Mill" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <div class="card-content">
+        <div class="card-meta"></div>
+        <h2 class="card-title">Old forest house</h2>
+        <p class="card-desc">Historical stone masonry foundations hidden along the creek trail line.</p>
+        <div class="card-footer">
+          <span>Waterdown Ravine</span>
+          <span style="color: var(--accent-purple);">View Location &rarr;</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- EXAMPLE LOCATION CARD 2 -->
+    <a href="clappison-tunnel.html" class="urbex-card">
+      <div class="card-img">
+        <img src="https://via.placeholder.com/400x200/1c1c24/9d4edd?text=Rail+Drain" alt="Rail Drain Tunnel" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <div class="card-content">
+        <div class="card-meta">Infrastructure</div>
+        <h2 class="card-title">Old Railway Culvert</h2>
+        <p class="card-desc">Concrete overflow drainage tunnel running underneath the old track bed.</p>
+        <div class="card-footer">
+          <span>Clappison Cut</span>
+          <span style="color: var(--accent-purple);">View Location &rarr;</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- EXAMPLE LOCATION CARD 3 -->
+    <a href="quarry-overlook.html" class="urbex-card">
+      <div class="card-img">
+        <img src="https://via.placeholder.com/400x200/1c1c24/9d4edd?text=Quarry" alt="Quarry Edge" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <div class="card-content">
+        <div class="card-meta">Overlook / Abandoned Site</div>
+        <h2 class="card-title">High Quarry Ledge</h2>
+        <p class="card-desc">Elevated vantage point overlooking inactive excavation zones and old equipment.</p>
+        <div class="card-footer">
+          <span>East Waterdown</span>
+          <span style="color: var(--accent-purple);">View Location &rarr;</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- ADD NEW LOCATIONS ABOVE THIS LINE -->
+
+  </main>
+
+  <footer>
+    <p>Maintained by jbrimz | Waterdown Urbex Directory</p>
+  </footer>
+
+  <script>
+    function filterLocations() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.urbex-card');
+
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (text.includes(input)) {
+          card.style.display = "flex";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
