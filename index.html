@@ -35,7 +35,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -48,7 +47,6 @@
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between antialiased selection:bg-purple-500 selection:text-white">
-
     <!-- NAVIGATION HEADER -->
     <header class="sticky top-0 z-50 bg-[#0f1115]/90 backdrop-blur-md border-b border-urbex-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -62,7 +60,6 @@
                     <span class="text-xs font-mono text-urbex-muted">Hamilton Directory</span>
                 </div>
             </a>
-
             <!-- Header Quick Stats / Links -->
             <div class="flex items-center gap-4">
                 <span class="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-urbex-card border border-urbex-border text-urbex-muted">
@@ -72,7 +69,6 @@
             </div>
         </div>
     </header>
-
     <!-- HERO SECTION -->
     <section class="relative py-12 md:py-16 border-b border-urbex-border bg-gradient-to-b from-purple-500/5 to-transparent">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -86,7 +82,6 @@
                 <p class="text-gray-400 text-base sm:text-lg leading-relaxed mb-6">
                     A curated archive of abandoned sites, industrial ruins, hidden tunnels, and forgotten structures across Waterdown and the greater Hamilton Escarpment region.
                 </p>
-
                 <!-- Search and Filter Controls -->
                 <div class="flex flex-col sm:flex-row gap-3">
                     <div class="relative flex-1">
@@ -107,7 +102,6 @@
             </div>
         </div>
     </section>
-
     <!-- MAIN LOCATION GRID -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1">
         <div class="flex items-center justify-between mb-6">
@@ -116,7 +110,6 @@
             </h2>
             <span class="text-xs font-mono text-gray-500" id="cardCount">Showing 3 places</span>
         </div>
-
         <!-- 
             ===================================================================
             LOCATIONS GRID 
@@ -125,7 +118,6 @@
             ===================================================================
         -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="locationGrid">
-
             <!-- PLACE CARD 1 -->
             <a href="place-1.html" class="location-card group bg-urbex-card border border-urbex-border rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 card-glow flex flex-col" data-category="industrial" data-title="Old Forest House">
                 <div class="relative h-48 bg-gray-900 overflow-hidden">
@@ -157,7 +149,6 @@
                     </div>
                 </div>
             </a>
-
             <!-- PLACE CARD 2 -->
             <a href="place-2.html" class="location-card group bg-urbex-card border border-urbex-border rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 card-glow flex flex-col" data-category="tunnel" data-title="clappison escarpment tunnel waterdown">
                 <div class="relative h-48 bg-gray-900 overflow-hidden">
@@ -189,13 +180,12 @@
                     </div>
                 </div>
             </a>
-
             <!-- PLACE CARD 3 -->
             <a href="place-3.html" class="location-card group bg-urbex-card border border-urbex-border rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 card-glow flex flex-col" data-category="residential" data-title="abandoned escarpment farmhouse waterdown">
                 <div class="relative h-48 bg-gray-900 overflow-hidden">
                     <img src="IMG_4105.jpeg" 
                          alt="Abandoned Barn" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
+                         class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
                          onerror="this.src='https://placehold.co/800x450/181b21/9d4edd?text=Escarpment+Farmhouse'">
                     <div class="absolute top-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-md text-xs font-mono text-purple-400 border border-purple-500/20">
                         Residential
@@ -206,106 +196,3 @@
                 </div>
                 <div class="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                        <h3 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors mb-1 flex items-center justify-between">
-                            Old Millburough Farmstead
-                            <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-0 group-hover:opacity-100 transition-opacity text-purple-400"></i>
-                        </h3>
-                        <p class="text-xs text-purple-400/80 font-mono mb-3"><i class="fa-solid fa-location-dot"></i> North Waterdown / Flamborough</p>
-                        <p class="text-gray-400 text-sm line-clamp-2">
-                            Late 1800s stone farmhouse and collapsed wooden silo abandoned during suburban expansion developments.
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-urbex-border/60 flex items-center justify-between text-xs text-gray-500 font-mono">
-                        <span><i class="fa-regular fa-calendar"></i> Added 2024</span>
-                        <span class="text-purple-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-semibold">View File &rarr;</span>
-                    </div>
-                </div>
-            </a>
-
-        </div>
-
-        <!-- No Results Fallback -->
-        <div id="noResults" class="hidden text-center py-12 border border-dashed border-urbex-border rounded-xl bg-urbex-card/50 my-6">
-            <i class="fa-solid fa-compass-slash text-4xl text-gray-600 mb-3"></i>
-            <h3 class="text-lg font-bold text-gray-300">No matching locations found</h3>
-            <p class="text-sm text-gray-500 mt-1">Try tweaking your search term or filter settings.</p>
-        </div>
-    </main>
-
-    <!-- INSTRUCTIONS BOX FOR EDITING -->
-    <section id="about" class="bg-urbex-card/50 border-t border-urbex-border py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-urbex-bg border border-urbex-border rounded-xl p-6 md:p-8">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="p-2 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">
-                        <i class="fa-solid fa-code-commit"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white">How to Add New Places Manually</h3>
-                </div>
-                <div class="space-y-3 text-sm text-gray-400 font-mono leading-relaxed">
-                    <p><span class="text-purple-400">Step 1:</span> Copy any existing <code>&lt;a href="place-X.html" class="location-card"...&gt;</code> block in this <code>index.html</code> code.</p>
-                    <p><span class="text-purple-400">Step 2:</span> Change the <code>href</code> link target (e.g. <code>href="my-new-spot.html"</code>) and edit title/description/tags.</p>
-                    <p><span class="text-purple-400">Step 3:</span> Create a matching HTML file in your GitHub repository (e.g. <code>place-1.html</code>, <code>my-new-spot.html</code>) with details for that specific spot!</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="border-t border-urbex-border bg-[#0b0c0f] py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-gray-500">
-            <div>
-                &copy; Waterdown Urbex Archive • Hamilton, Ontario
-            </div>
-            <div class="flex items-center gap-4">
-                <span>Respect Property • Explore Safely</span>
-            </div>
-        </div>
-    </footer>
-
-    <!-- INTERACTIVE SEARCH / FILTERING SCRIPT -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const searchInput = document.getElementById('searchInput');
-            const filterCategory = document.getElementById('filterCategory');
-            const cards = document.querySelectorAll('.location-card');
-            const noResults = document.getElementById('noResults');
-            const cardCount = document.getElementById('cardCount');
-
-            function filterCards() {
-                const query = searchInput.value.toLowerCase().trim();
-                const category = filterCategory.value;
-                let visibleCount = 0;
-
-                cards.forEach(card => {
-                    const cardTitle = card.getAttribute('data-title') || '';
-                    const cardCategory = card.getAttribute('data-category') || '';
-
-                    const matchesSearch = cardTitle.includes(query);
-                    const matchesCategory = (category === 'all') || (cardCategory === category);
-
-                    if (matchesSearch && matchesCategory) {
-                        card.classList.remove('hidden');
-                        visibleCount++;
-                    } else {
-                        card.classList.add('hidden');
-                    }
-                });
-
-                // Update visibility of "No Results" message
-                if (visibleCount === 0) {
-                    noResults.classList.remove('hidden');
-                } else {
-                    noResults.classList.add('hidden');
-                }
-
-                // Update counter text
-                cardCount.textContent = `Showing ${visibleCount} place${visibleCount === 1 ? '' : 's'}`;
-            }
-
-            searchInput.addEventListener('input', filterCards);
-            filterCategory.addEventListener('change', filterCards);
-        });
-    </script>
-</body>
-</html>
